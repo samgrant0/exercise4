@@ -517,12 +517,23 @@ function main() {
     var testEye = new Vector(0,0,0);
     var testAt = Vector.subtract(new Vector(0,0,10),testEye);
     var view = {eye:testEye, at:testAt, up:new Vector(0,1,0)};
-    var poly = [{x:-5,y:5,z:10,c:new Color(255,0,0,255)}, {x:5,y:5,z:10,c:new Color(0,255,0,255)}, 
-                {x:5,y:-5,z:10,c:new Color(0,0,0,255)}, {x:-5,y:-5,z:10,c:new Color(0,0,255,255)}];
+    var poly = [{x:-3,y:0,z:10,c:new Color(255,0,0,255)}, {x:-8,y:5,z:10,c:new Color(0,255,0,255)}, 
+                {x:-13,y:0,z:10,c:new Color(0,0,0,255)}, {x:-8,y:-5,z:10,c:new Color(0,0,255,255)}];
     
     // Define and render a rectangle in 2D with colors and coords at corners
     projectPoly(imagedata,poly,view);
     fillPoly(imagedata,poly);
+
+    // define polygon and view
+    var testEye2 = new Vector(0,0,0);
+    var testAt2 = Vector.subtract(new Vector(0,0,10),testEye2);
+    var view2 = {eye:testEye, at:testAt2, up:new Vector(0,1,0)};
+    var poly2 = [{x:1,y:5,z:9,c:new Color(255,0,0,255)}, {x:11,y:5,z:12,c:new Color(0,255,0,255)}, 
+                {x:11,y:-5,z:12,c:new Color(0,0,0,255)}, {x:1,y:-5,z:9, c:new Color(0,0,255,255)}];
+    
+    // Define and render a rectangle in 2D with colors and coords at corners
+    projectPoly(imagedata,poly2,view2);
+    fillPoly(imagedata,poly2);
     
     context.putImageData(imagedata, 0, 0); // display the image in the context
 }
